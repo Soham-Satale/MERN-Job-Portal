@@ -25,7 +25,7 @@ const JobDashboardCard = ({job}) => {
                 }
                 `}
             >
-                {!job.isClosed ? 'Closed' : 'Active'}
+                {!job.isClosed ? 'Active' : 'Closed'}
             </span>
 
         </div>

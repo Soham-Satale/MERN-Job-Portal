@@ -9,6 +9,7 @@ import { toast } from 'react-hot-toast'
 import InputField from '../../components/input/InputField'
 import SelectField from '../../components/input/SelectField'
 import TextareaField from '../../components/input/TextareaField'
+import JobPostingPreview from '../../components/cards/JobPostingPreview'
 
 const JobPostingForm = () => {
 
@@ -17,7 +18,7 @@ const JobPostingForm = () => {
   const jobId=location.state?.jobId || null
 
   const [formData,setFormData]=useState({
-    jotitle:'',
+    jobtitle:'',
     location:'',
     category:'',
     jobType:'',
@@ -56,7 +57,7 @@ const JobPostingForm = () => {
     setIsSubmitting(true);
 
     const jobPayload={
-      title:formData.joTitle,
+      title:formData.jobtitle,
       location:formData.location,
       category:formData.category,
       type:formData.jobType,
@@ -77,7 +78,7 @@ const JobPostingForm = () => {
           : 'Job posted successfully'
         )
         setFormData({
-          jotitle:'',
+          jobtitle:'',
           location:'',
           category:'',
           jobType:'',
@@ -109,7 +110,7 @@ const JobPostingForm = () => {
 
   const validateForm=(formdata)=>{
     const errors={}
-    if(!formdata.jotitle.trim()) errors.jotitle='Job title is required'
+    if(!formdata.jobtitle.trim()) errors.jobtitle='Job title is required'
     if(!formdata.location) errors.location='Job location is required'
     if(!formdata.category) errors.category='Job category is required'
     if(!formdata.jobType) errors.jobType='Job type is required'
@@ -170,11 +171,11 @@ const JobPostingForm = () => {
               {/* Job Title */}
               <InputField
               label="Job Title"
-              id="joTitle"
+              id="jobTitle"
               placeholder="e.g. Senior Software Engineer"
-              value={formData.jotitle}
-              onChange={(e)=>handleInputChange('jotitle',e.target.value)}
-              error={errors.joTitle}
+              value={formData.jobtitle}
+              onChange={(e)=>handleInputChange('jobtitle',e.target.value)}
+              error={errors.jobtitle}
               required
               icon={Briefcase}
               />
