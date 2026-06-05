@@ -68,8 +68,8 @@ const DashboardLayout = ({activeMenu,children}) => {
 
 
     const handleNavigation=(itemId)=>{
-        setActiveNavItem(ItemId);
-        navigate(`/${ItemId}`);
+        setActiveNavItem(itemId);
+        navigate(`/${itemId}`);
         if(isMobile){
             setSidebarOpen(false);
         }
