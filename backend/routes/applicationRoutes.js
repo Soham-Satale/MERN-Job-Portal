@@ -8,7 +8,7 @@ const router=express.Router();
 router.get('/my',protect,getMyApplications);
 router.post('/:jobId',protect,applyToJob);
 router.get('/job/:jobId',protect,getApplicantsForJob);
-router.get('/:Id',protect,getApplicationById);
-router.put('/:Id/status',protect,updateStatus);
+router.get('/:id',protect,getApplicationById);
+router.put('/:id/status',protect,updateStatus);
 
 export default router;

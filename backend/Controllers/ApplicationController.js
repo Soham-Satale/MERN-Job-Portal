@@ -45,7 +45,8 @@ export const getApplicantsForJob = async (req, res) => {
         if(!job || job.company.toString()!==req.user._id.toString()) return res.status(403).json({message:"Not authorized to view applicants"});
 
         const applications=await Application.find({job:req.params.jobId})
-        .populate("applicant","name email avatar resume");
+        .populate("applicant","name email avatar resume")
+        .populate("job","title type location category");
 
         res.json(applications);
     }
@@ -79,11 +80,14 @@ export const getApplicationById = async (req, res) => {
 //desc update applcation status(emplyer)
 export const updateStatus = async (req, res) => {
     try{
+
+
         const {status}=req.body
         const allowedStatus = [
             "Applied",
             "Accepted",
-            "Rejected"
+            "Rejected",
+            "In Review"
         ];
 
         if (!allowedStatus.includes(status)) {
