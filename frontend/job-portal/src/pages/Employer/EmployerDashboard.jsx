@@ -98,7 +98,7 @@ const EmployerDashboard = () => {
           />
           <StatCard
             title="Total Applicants"
-            value={dashboardData?.counts?.totalApplicants || 0}
+            value={dashboardData?.counts?.totalApplications || 0}
             icon={Users}
             trend={true}
             trendValue={`${dashboardData?.counts?.trends?.totalApplicants || 0}%`}
