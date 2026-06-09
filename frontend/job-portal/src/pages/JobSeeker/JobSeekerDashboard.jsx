@@ -41,7 +41,7 @@ const JobSeekerDashboard = () => {
   });
 
   //Function to fetch jobs from API
-  const fetchJobs=async(filterParams)=>{
+  const fetchJobs=async(filterParams={})=>{
     try{
       setLoading(true)
       setError(null)
