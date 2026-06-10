@@ -33,6 +33,7 @@ const UserProfile = () => {
     setUploading(prev=>({...prev,[type]:true}))
     try{
       const imgUploadRes=await uploadImage(file)
+      console.log("Uploaded image response:", imgUploadRes);
       const avatarUrl=imgUploadRes.imageUrl || '';
       handleInputChange(type,avatarUrl)
     }
