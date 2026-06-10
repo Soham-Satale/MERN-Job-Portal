@@ -92,7 +92,7 @@ const JobDetails = () => {
                   <StatusBadge status={jobDetails?.applicationStatus}/>
                  ) : (
                   <button 
-                  onClick={applyToJob(jobId)}
+                  onClick={() => applyToJob(jobId)}
                   className='bg-gradient-to-r from-blue-50 to-blue-100 text-sm text-blue-700 hover:text-white px-6 py-2.5 rounded-xl hover:from-blue-500 hover:to-blue-600 transition-all duration-200 font-semibold transform hover:-translate-y-0.5'>
                     Apply Now
                   </button>
